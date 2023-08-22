@@ -123,9 +123,9 @@ const Row = ({ country, index }) => {
 const CountryCard = ({ countryData, setFetchCountryState }) => {
   return (
     <div className=" w-screen min-h-screen fixed top-0 left-0 flex justify-center items-center bg-blue-200/50 backdrop-blur-sm">
-      <div className=" bg-stone-400 w-[400px] p-2  rounded-md space-y-2">
-        <div className="flex justify-between">
-          <span>Info</span>
+      <div className=" bg-stone-400 w-[600px] h-[400px] p-2  rounded-md space-y-2 overflow-y-auto">
+        <div className="flex justify-between px-2">
+          <span>{countryData[0].name.common}</span>
           <span
             className="underline text-blue-700 cursor-pointer"
             onClick={() => setFetchCountryState("pending")}
@@ -149,6 +149,12 @@ const CountryCard = ({ countryData, setFetchCountryState }) => {
           })}
           <p>
             <strong>FIFA:</strong> {countryData[0].fifa}
+          </p>
+          <p>
+            <strong>Region:</strong> {countryData[0].region}
+          </p>
+          <p>
+            <strong>Populations:</strong> {countryData[0].population}
           </p>
           <p>
             <strong>Translations:</strong>
